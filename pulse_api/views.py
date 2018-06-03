@@ -74,7 +74,6 @@ def pulse_resp_for_list(data):
 def pulse_bulk_operation(request):
     """
     List all pulses or create a new
-    curl -i -X POST -H "Content-Type: application/json" -d '  {"name": "my pulse", "maximum_rabi_rate": 100.32, "polar_angle": 0.1, "pulse_type": "cinbb" }' http://127.0.0.1:3200/pulses/
     """
     if request.method == 'GET':
         pulse_objects = Pulse.objects.filter(deleted=False)
