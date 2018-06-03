@@ -1,0 +1,25 @@
+version: "3"
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pulseDB
+      MYSQL_USER: pulse
+      MYSQL_PASSWORD: pulse
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:3200
+    volumes:
+      - .:/pulse
+    ports:
+      - "3200:3200"
+    depends_on:
+      - db
+volumes:
+    db_data:
