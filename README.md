@@ -22,6 +22,7 @@ To get started
 
 To test API:
 
+``` javascript 
 
 curl -i -X POST -H "Content-Type: application/json" -d '
 {
@@ -37,5 +38,6 @@ curl -i -X POST -H "Content-Type: application/json" -d '
 }  
 ' http://127.0.0.1:3200/pulses/
 
+```
 
   
